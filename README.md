@@ -1,17 +1,49 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Trips Management
 
-Things you may want to cover:
+The script takes a file with information about trips and returns the information about 
+their itineraries in a more human friendly way.
 
-* Ruby version
+## Requirements
 
-* System dependencies
+### Ruby version
+Ruby 2.6.6
 
-* Configuration
+### How to execute
+The script can be simply run from terminal with following command:
+```bash
+BASE = <COPY_BASE_CITY_NAME_HERE> bundle exec ruby main.rb input_filename
+```
 
-* Database creation
+### Output
+In this first version on the script we print the content of input file line by line
+
+
+````bash
+# input.txt
+
+RESERVATION
+SEGMENT: Flight SVQ 2023-03-02 06:40 -> BCN 09:10
+
+RESERVATION
+SEGMENT: Hotel BCN 2023-01-05 -> 2023-01-10
+
+RESERVATION
+SEGMENT: Flight SVQ 2023-01-05 20:40 -> BCN 22:10
+SEGMENT: Flight BCN 2023-01-10 10:30 -> SVQ 11:50
+
+RESERVATION
+SEGMENT: Train SVQ 2023-02-15 09:30 -> MAD 11:00
+SEGMENT: Train MAD 2023-02-17 17:00 -> SVQ 19:30
+
+RESERVATION
+SEGMENT: Hotel MAD 2023-02-15 -> 2023-02-17
+
+RESERVATION
+SEGMENT: Flight BCN 2023-03-02 15:00 -> NYC 22:45
+```
+
 
 * Database initialization
 
@@ -20,5 +52,3 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
