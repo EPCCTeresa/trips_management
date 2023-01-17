@@ -29,7 +29,7 @@ describe Cli do
     end
 
     context 'when valid filepath is provided' do
-      let(:array_file_content) { ["Hotel in Madrid 23-05-23.\n", "Flight SEV -> MAD 23-05-2023 11:00\n\n"]  }
+      let(:array_file_content) { ["Hotel in Madrid 23-05-23.\n", "Flight SEV -> MAD 23-05-2023 11:00\n\n"] }
       let(:expectation) { "Hotel in Madrid 23-05-23.\nFlight SEV -> MAD 23-05-2023 11:00\n\n" }
       let(:file) { instance_double(File) }
       let(:args) { ['filepath'] }
