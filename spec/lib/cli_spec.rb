@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'rails_helper'
 require 'cli'
 
 require_relative '../shared_examples/output_spec'

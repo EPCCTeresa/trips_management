@@ -1,4 +1,4 @@
-# input.txt
+# input.rb
 
 RESERVATION
 SEGMENT: Flight SVQ 2023-03-02 06:40 -> BCN 09:10
