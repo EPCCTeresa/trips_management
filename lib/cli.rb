@@ -11,7 +11,7 @@ class Cli
 
   def call
     if argv.empty?
-      puts 'Please provide a file location to get the webserver log report.'
+      puts 'Please provide a file location so we can help you sort your itinerary details.'
     else
       parsed_data=ParseData.new(file).call
       output_info = SegmentManagement.new(parsed_data).call

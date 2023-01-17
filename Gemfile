@@ -33,6 +33,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Call 'binding.pry' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
+  gem 'rspec'
+  gem 'rubocop', '~> 0.80.1'
+  gem 'rubocop-rspec', '~> 1.38', '>= 1.38.1'
 end
 
 group :development do
