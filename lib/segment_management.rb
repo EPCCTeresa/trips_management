@@ -45,9 +45,11 @@ class SegmentManagement
   def order_segments(segments)
     pos = []
     i = 1
-    segments.each_with_index{ |str,i| pos << i if str.start_with?("Hotel") } 		# Get positions of segments that contains stays(We just consider "Hotel" as stay but it can be extended)
+    # Get positions of segments that contains stays(We just consider "Hotel" as stay but it can be extended)
+    segments.each_with_index{ |str,i| pos << i if str.start_with?("Hotel") }
     pos.each do |position|
-      segments.insert(i, segments.delete_at(position))					# The script accepts more than one stays in a roundtrip with stay within the same destination group.
+      # The script accepts more than one stays in a roundtrip with stay within the same destination group.
+      segments.insert(i, segments.delete_at(position))
       i = i+1
     end
   end
@@ -59,14 +61,17 @@ class SegmentManagement
     # we assume that there are no more than two words that contain 3 consecutive capital letters
     # and that the target segment will not contain the base environment attribute
     new_destination = if is_connection == 2
-                        next_entry.scan(/[A-Z][A-Z][A-Z]/).second 			# Takes the destination from the next entry.
-											# Here we assume that the destination is the second word of three consecutive capital letters
-      		      elsif is_connection == 1
-                        entry.scan(/[A-Z][A-Z][A-Z]/).second if is_connection == 1      # Takes the destination from the current entry
-											# Here we assume that the destination is the second word of three consecutive capital letters
-		      else
-                        new_destination = new_destination.first				# It is not a connection, so it takes the destination from the current entry
-		      end
+                        # Takes the destination from the next entry.
+                        # Here we assume that the destination is the second word of three consecutive capital letters
+                        next_entry.scan(/[A-Z][A-Z][A-Z]/).second
+                      elsif is_connection == 1
+                        # Takes the destination from the current entry
+                        # Here we assume that the destination is the second word of three consecutive capital letters
+                        entry.scan(/[A-Z][A-Z][A-Z]/).second if is_connection == 1
+                      else
+                        # It is not a connection, so it takes the destination from the current entry
+                        new_destination = new_destination.first
+		                  end
     new_destination
   end
 

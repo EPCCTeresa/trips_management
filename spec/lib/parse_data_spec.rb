@@ -3,7 +3,7 @@
 require 'rails_helper'
 require 'parse_data'
 
-require_relative '../shared_examples/output_spec'
+require_relative '../shared_examples/output'
 
 describe ParseData do
   describe '#call' do

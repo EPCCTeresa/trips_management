@@ -3,7 +3,7 @@
 require 'rails_helper'
 require 'cli'
 
-require_relative '../shared_examples/output_spec'
+require_relative '../shared_examples/output'
 
 describe Cli do
   describe '#call' do
